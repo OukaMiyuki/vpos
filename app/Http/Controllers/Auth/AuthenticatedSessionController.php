@@ -28,7 +28,12 @@ class AuthenticatedSessionController extends Controller {
             'message' => 'Anda telah sukses login!',
             'alert-type' => 'info',
         );
-        return redirect()->intended(RouteServiceProvider::HOME)->with($notification);
+        if(Auth::user() && Auth::user()->type == 'super_admin'){
+            return redirect()->route('admin.dashboard');
+        } else { 
+            Auth::guard('web')->logout();
+            return redirect()->route('login')->with('status', 'You are not authorized to access this page.');
+        }
     }
 
     /**

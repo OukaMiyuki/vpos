@@ -35,7 +35,7 @@
             <ul id="side-menu">
                 <li class="menu-title">Navigation</li>
                 <li>
-                    <a href="{{ route('dashboard') }}" data-bs-toggle="collapse">
+                    <a href="{{ route('admin.dashboard') }}" data-bs-toggle="collapse">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span> Dashboards </span>
                     </a>

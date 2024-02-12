@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\DetailUser;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
@@ -47,5 +48,11 @@ class User extends Authenticatable {
 
     public function detailUser(){
         return $this->hasOne(DetailUser::class, 'id_user', 'id');
+    }
+
+    protected function type(): Attribute {
+        return new Attribute(
+            get: fn ($value) =>  ["super_admin", "marketing"][$value],
+        );
     }
 }

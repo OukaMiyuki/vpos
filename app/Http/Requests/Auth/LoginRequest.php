@@ -11,13 +11,12 @@ use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
 use App\Models\User;
 
-class LoginRequest extends FormRequest
-{
+class LoginRequest extends FormRequest {
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
-    {
+
+    public function authorize(): bool {
         return true;
     }
 
@@ -26,8 +25,7 @@ class LoginRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules(): array
-    {
+    public function rules(): array {
         return [
             'login' => ['required', 'string'],
             'password' => ['required', 'string'],
@@ -39,8 +37,7 @@ class LoginRequest extends FormRequest
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function authenticate(): void
-    {
+    public function authenticate(): void {
         $this->ensureIsNotRateLimited();
         $user = User::where('email',$this->login)
                     ->orWhere('name',$this->login)
