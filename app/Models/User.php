@@ -19,10 +19,12 @@ class User extends Authenticatable {
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'username',
         'email',
         'phone',
         'photo',
+        'type',
+        'is_active',
         'password',
     ];
 
@@ -54,5 +56,17 @@ class User extends Authenticatable {
         return new Attribute(
             get: fn ($value) =>  ["super_admin", "marketing"][$value],
         );
+    }
+
+    public function detailUserStore($model){
+        $DetailUser = new DetailUser();
+        $DetailUser->id_user = $model->id;
+        $DetailUser->nama_lengkap = request()->nama_lengkap;
+        $DetailUser->no_ktp = request()->no_ktp;
+        $DetailUser->tempat_lahir = request()->tempat_lahir;
+        $DetailUser->tanggal_lahir = request()->tanggal_lahir;
+        $DetailUser->jenis_kelamin = request()->jenis_kelamin;
+        $DetailUser->alamat = request()->alamat;
+        $DetailUser->save();
     }
 }

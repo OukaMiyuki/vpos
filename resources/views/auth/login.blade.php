@@ -17,6 +17,7 @@
         <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
         <!-- Head js -->
         <script src="{{ asset('assets/js/head.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
     </head>
     <body class="authentication-bg authentication-bg-pattern">
         <div class="account-pages mt-5 mb-5">
@@ -28,14 +29,14 @@
                                 <div class="text-center w-75 m-auto">
                                     <div class="auth-logo">
                                         <a href="index.html" class="logo logo-dark text-center">
-                                        <span class="logo-lg">
-                                            <img src="{{ asset('assets/images/logo/Logo1.png') }}" alt="" height="100">
-                                        </span>
+                                            <span class="logo-lg">
+                                                <img src="{{ asset('assets/images/logo/Logo1.png') }}" alt="" height="100">
+                                            </span>
                                         </a>
                                         <a href="index.html" class="logo logo-light text-center">
-                                        <span class="logo-lg">
-                                            <img src="{{ asset('assets/images/logo/Logo1.png') }}" alt="" height="100">
-                                        </span>
+                                            <span class="logo-lg">
+                                                <img src="{{ asset('assets/images/logo/Logo1.png') }}" alt="" height="100">
+                                            </span>
                                         </a>
                                     </div>
                                     <p class="text-muted mb-4 mt-3">Masukkan Email, Username atau No. WA dan Password untuk masuk!</p>
@@ -44,7 +45,7 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="login" class="form-label">Email / Username / No. Telp.</label>
-                                        <input class="form-control @error('login') is-invalid @enderror" type="text" id="login" required="" name="login" placeholder="Masukkan E-mail Username atau No. Telp.">
+                                        <input class="form-control @error('login') is-invalid @enderror" type="text" value="{{ old('login') }}" id="login" required="" name="login" placeholder="Masukkan E-mail Username atau No. Telp.">
                                         @error('login')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
@@ -97,5 +98,29 @@
         <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
         <!-- App js -->
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+        <script>
+            @if(Session::has('message'))
+                var type = "{{ Session::get('alert-type','info') }}"
+                switch(type){
+                    case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
+                
+                    case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+                
+                    case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+                
+                    case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break; 
+                }
+            @endif 
+        </script>
     </body>
 </html>

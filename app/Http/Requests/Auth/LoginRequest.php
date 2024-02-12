@@ -40,7 +40,7 @@ class LoginRequest extends FormRequest {
     public function authenticate(): void {
         $this->ensureIsNotRateLimited();
         $user = User::where('email',$this->login)
-                    ->orWhere('name',$this->login)
+                    ->orWhere('username',$this->login)
                     ->orWhere('phone',$this->phone)
                     ->first();
         if (!$user || !Hash::check($this->password,$user->password)) {
@@ -52,7 +52,7 @@ class LoginRequest extends FormRequest {
         }
         if($user->is_active == 0){
             throw ValidationException::withMessages([
-                'login' => trans('auth.failed'),
+                'login' => trans('Akun anda belum aktif!'),
             ]);
         } else {
             Auth::login($user, $this->boolean('remember'));

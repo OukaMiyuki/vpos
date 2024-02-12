@@ -121,4 +121,9 @@ class AdminController extends Controller {
         return redirect()->back()->with($notification);
 
     }
+
+    public function adminMarketingDashboard(){
+        $marketingList = User::where('type', 1)->count();
+        return view('admin.admin_marketing_dashboard', compact('marketingList'));
+    }
 }

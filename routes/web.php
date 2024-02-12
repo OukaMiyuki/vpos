@@ -30,13 +30,14 @@ Route::get('/', function () {
 // });
 
 Route::middleware(['auth', 'user-access:super_admin'])->group(function () {
-    Route::get('/dashboard/admin', function () {
+    Route::get('/admin/dashboard', function () {
         return view('index');
     })->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'adminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminController::class, 'adminProfileStore'])->name('admin.profile.store');
     Route::post('/admin/profile/info/store', [AdminController::class, 'adminProfileInfoStore'])->name('admin.profile.info.store');
+    Route::get('/admin/dashboard/marketing', [AdminController::class, 'adminMarketingDashboard'])->name('admin.marketing.dashboard');
     Route::get('/change/password', [AdminController::class, 'changePassword'])->name('change.password');
     Route::post('/update/password', [AdminController::class, 'updatePassword'])->name('update.password');
 });

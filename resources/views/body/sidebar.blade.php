@@ -35,7 +35,7 @@
             <ul id="side-menu">
                 <li class="menu-title">Navigation</li>
                 <li>
-                    <a href="{{ route('admin.dashboard') }}" data-bs-toggle="collapse">
+                    <a href="{{ route('admin.dashboard') }}">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span> Dashboards </span>
                     </a>
@@ -56,7 +56,7 @@
                     <div class="collapse" id="marketing">
                         <ul class="nav-second-level">
                             <li>
-                                <a href="crm-dashboard.html">Dashboard</a>
+                                <a href="{{ route('admin.marketing.dashboard') }}">Dashboard</a>
                             </li>
                             <li>
                                 <a href="crm-contacts.html">Contacts</a>
