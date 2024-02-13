@@ -30,15 +30,16 @@ class AdminController extends Controller {
     }
 
     public function adminProfile() {
-        $id = Auth::user()->id;
-        $adminData = User::with('detailUser')->find($id);
-        return view('admin.admin_profile_view', compact('adminData'));
+        // $id = Auth::user()->id;
+        // $adminData = User::with('detailUser')->find($id);
+        return view('admin.admin_profile_view');
     }
 
     public function adminProfileStore(Request $request) {
+
         $id = Auth::user()->id;
         $adminData = User::find($id);
-        $adminData->name = $request->username;
+        $adminData->username = $request->username;
         $adminData->email = $request->email;
         $adminData->phone = $request->phone;
         $adminData->is_active = $request->status;
@@ -124,6 +125,90 @@ class AdminController extends Controller {
 
     public function adminMarketingDashboard(){
         $marketingList = User::where('type', 1)->count();
-        return view('admin.admin_marketing_dashboard', compact('marketingList'));
+        $marketingData = User::with('detailUser')->where('type', 1)->where('is_active', 1)->latest()->take(5)->get();
+        $marketingAktivasi = User::with('detailUser')->where('type', 1)->where('is_active', 0)->latest()->take(10)->get();
+        return view('admin.admin_marketing_dashboard', compact('marketingList', 'marketingData', 'marketingAktivasi'));
+    }
+
+    public function adminMarketingList(){
+        $userMarketing = User::with('detailUser')->where('type', 1)->orderBy('id', 'DESC')->get();
+        return view('admin.admin_marketing_list_all', compact('userMarketing'));
+    }
+
+    public function adminMarketingProfileDetail($id){
+        $marketingData = User::with('detailUser')->find($id);
+        return view('marketing.marketing_profile', compact('marketingData'));
+    }
+
+    public function adminMarketingProfileDetailAccountStore(Request $request){
+        $userMarketing = User::find($request->id);
+        $userMarketing->username = $request->username;
+        $userMarketing->email = $request->email;
+        $userMarketing->phone = $request->phone;
+        $userMarketing->is_active = $request->status;
+
+        if($request->hasFile('photo')){
+            $file = $request->file('photo');
+            $namaFile = $request->username;
+            $storagePath = Storage::path('public/images/profile');
+            $ext = $file->getClientOriginalExtension();
+            $filename = $namaFile.'-'.time().'.'.$ext;
+            if(empty($userMarketing->photo)){
+                try {
+                    $file->move($storagePath, $filename);
+                } catch (\Exception $e) {
+                    return $e->getMessage();
+                }
+            } else {
+                Storage::delete('public/images/profile/'.$userMarketing->photo);
+                $file->move($storagePath, $filename);
+            }
+            $userMarketing['photo'] = $filename;
+            $userMarketing->save();
+            $notification = array(
+                'message' => 'Data akun berhasil diupdate!',
+                'alert-type' => 'success',
+            );
+            return redirect()->back()->with($notification);
+        } else {
+            $userMarketing->save();
+            $notification = array(
+                'message' => 'Data akun berhasil diupdate!',
+                'alert-type' => 'success',
+            );
+            return redirect()->back()->with($notification);
+        }
+    }
+
+    public function adminMarketingProfileDetailInfoStore(Request $request){
+        $userMarketing = DetailUser::find($request->id);
+        $userMarketing->update([
+            'nama_lengkap' => $request->nama_lengkap,
+            'no_ktp' => $request->no_ktp,
+            'tempat_lahir' => $request->tempat_lahir,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'alamat' => $request->alamat,
+        ]);
+        $notification = array(
+            'message' => 'Data akun berhasil diupdate!',
+            'alert-type' => 'success',
+        );
+        return redirect()->back()->with($notification);
+    }
+
+    public function adminMarketingProfileAccountActivation($id){
+        $userMarketing = User::find($id);
+        if($userMarketing->is_active == 0){
+            $userMarketing->is_active = 1;
+        } else {
+            $userMarketing->is_active = 0;
+        }
+        $userMarketing->save();  
+        $notification = array(
+            'message' => 'Data akun berhasil diupdate!',
+            'alert-type' => 'info',
+        );
+        return redirect()->back()->with($notification);      
     }
 }

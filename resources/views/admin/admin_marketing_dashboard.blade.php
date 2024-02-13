@@ -42,7 +42,7 @@
                                     <div class="text-end">
                                         <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ $marketingList }}</span></h3>
                                         <p class="text-muted mb-1 text-truncate">Jumlah Marketing</p>
-                                        <a href="" class="btn btn-blue btn-sm ms-2">
+                                        <a href="{{ route('admin.marketing.dashboard.list') }}" class="btn btn-blue btn-sm ms-2">
                                             <i class="mdi mdi-eye"></i>
                                         </a>
                                     </div>
@@ -113,7 +113,7 @@
                                 <i class="mdi mdi-dots-vertical"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a href="javascript:void(0);" class="dropdown-item">Lihat Semua Data</a>
+                                    <a href="{{ route('admin.marketing.dashboard.list') }}" class="dropdown-item">Lihat Semua Data</a>
                                 </div>
                             </div>
                             <h4 class="header-title mb-3">Marketing Baru</h4>
@@ -121,124 +121,40 @@
                                 <table class="table table-borderless table-hover table-nowrap table-centered m-0">
                                     <thead class="table-light">
                                         <tr>
-                                            <th colspan="2">Profile</th>
-                                            <th>Currency</th>
-                                            <th>Balance</th>
-                                            <th>Reserved in orders</th>
+                                            <th>Profile</th>
+                                            <th>Nama</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Jabatan</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td style="width: 36px;">
-                                                <img src="{{ asset('assets/images/users/user-2.jpg') }}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
-                                            </td>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Tomaslau</h5>
-                                                <p class="mb-0 text-muted"><small>Member Since 2017</small></p>
-                                            </td>
-                                            <td>
-                                                <i class="mdi mdi-currency-btc text-primary"></i> BTC
-                                            </td>
-                                            <td>
-                                                0.00816117 BTC
-                                            </td>
-                                            <td>
-                                                0.00097036 BTC
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-plus"></i></a>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-danger"><i class="mdi mdi-minus"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 36px;">
-                                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
-                                            </td>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Erwin E. Brown</h5>
-                                                <p class="mb-0 text-muted"><small>Member Since 2017</small></p>
-                                            </td>
-                                            <td>
-                                                <i class="mdi mdi-currency-eth text-primary"></i> ETH
-                                            </td>
-                                            <td>
-                                                3.16117008 ETH
-                                            </td>
-                                            <td>
-                                                1.70360009 ETH
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-plus"></i></a>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-danger"><i class="mdi mdi-minus"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 36px;">
-                                                <img src="{{ asset('assets/images/users/user-4.jpg') }}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
-                                            </td>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Margeret V. Ligon</h5>
-                                                <p class="mb-0 text-muted"><small>Member Since 2017</small></p>
-                                            </td>
-                                            <td>
-                                                <i class="mdi mdi-currency-eur text-primary"></i> EUR
-                                            </td>
-                                            <td>
-                                                25.08 EUR
-                                            </td>
-                                            <td>
-                                                12.58 EUR
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-plus"></i></a>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-danger"><i class="mdi mdi-minus"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 36px;">
-                                                <img src="{{ asset('assets/images/users/user-5.jpg') }}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
-                                            </td>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Jose D. Delacruz</h5>
-                                                <p class="mb-0 text-muted"><small>Member Since 2017</small></p>
-                                            </td>
-                                            <td>
-                                                <i class="mdi mdi-currency-cny text-primary"></i> CNY
-                                            </td>
-                                            <td>
-                                                82.00 CNY
-                                            </td>
-                                            <td>
-                                                30.83 CNY
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-plus"></i></a>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-danger"><i class="mdi mdi-minus"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 36px;">
-                                                <img src="{{ asset('assets/images/users/user-6.jpg') }}" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
-                                            </td>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Luke J. Sain</h5>
-                                                <p class="mb-0 text-muted"><small>Member Since 2017</small></p>
-                                            </td>
-                                            <td>
-                                                <i class="mdi mdi-currency-btc text-primary"></i> BTC
-                                            </td>
-                                            <td>
-                                                2.00816117 BTC
-                                            </td>
-                                            <td>
-                                                1.00097036 BTC
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-plus"></i></a>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-danger"><i class="mdi mdi-minus"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach ($marketingData as $marData)
+                                            <tr>
+                                                <td style="width: 36px;">
+                                                    <img src="{{ !empty($marData->photo) ? Storage::url('images/profile/'.$marData->photo) : asset('assets/images/blank_profile.png') }}"" alt="contact-img" title="contact-img" class="rounded-circle avatar-sm" />
+                                                </td>
+                                                <td>
+                                                    <h5 class="m-0 fw-normal">
+                                                        @if(!empty($marData->detailUser->nama_lengkap))
+                                                            {{ $marData->detailUser->nama_lengkap }}
+                                                         @endif
+                                                    </h5>
+                                                    <p class="mb-0 text-muted"><small>Bergabung pada {{ $marData->created_at }}</small></p>
+                                                </td>
+                                                <td>
+                                                    @if(!empty($marData->detailUser->jenis_kelamin))
+                                                        {{ $marData->detailUser->jenis_kelamin }}
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    {{ $marData->type }}
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('admin.marketing.dashboard.list.detail', ['id'=>$marData->id]) }}" class="btn btn-xs btn-info"><i class="mdi mdi-eye"></i></a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -254,7 +170,7 @@
                                 <i class="mdi mdi-dots-vertical"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <a href="javascript:void(0);" class="dropdown-item">Lihat Semua Data</a>
+                                    <a href="{{ route('admin.marketing.dashboard.list') }}" class="dropdown-item">Lihat Semua Data</a>
                                 </div>
                             </div>
                             <h4 class="header-title mb-3">Waiting Account Activation</h4>
@@ -262,201 +178,29 @@
                                 <table id="scroll-vertical-datatable" class="table dt-responsive nowrap w-100">
                                     <thead class="table-light">
                                         <tr>
-                                            <th>Marketplaces</th>
-                                            <th>Date</th>
-                                            <th>Payouts</th>
+                                            <th>Nama</th>
+                                            <th>Tanggal Gabung</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Themes Market</h5>
-                                            </td>
-                                            <td>
-                                                Oct 15, 2018
-                                            </td>
-                                            <td>
-                                                $5848.68
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-warning text-warning">Upcoming</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Freelance</h5>
-                                            </td>
-                                            <td>
-                                                Oct 12, 2018
-                                            </td>
-                                            <td>
-                                                $1247.25
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Share Holding</h5>
-                                            </td>
-                                            <td>
-                                                Oct 10, 2018
-                                            </td>
-                                            <td>
-                                                $815.89
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Envato's Affiliates</h5>
-                                            </td>
-                                            <td>
-                                                Oct 03, 2018
-                                            </td>
-                                            <td>
-                                                $248.75
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-danger text-danger">Overdue</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Marketing Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 21, 2018
-                                            </td>
-                                            <td>
-                                                $978.21
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-warning text-warning">Upcoming</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 15, 2018
-                                            </td>
-                                            <td>
-                                                $358.10
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 15, 2018
-                                            </td>
-                                            <td>
-                                                $358.10
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 15, 2018
-                                            </td>
-                                            <td>
-                                                $358.10
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 15, 2018
-                                            </td>
-                                            <td>
-                                                $358.10
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 15, 2018
-                                            </td>
-                                            <td>
-                                                $358.10
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <h5 class="m-0 fw-normal">Advertise Revenue</h5>
-                                            </td>
-                                            <td>
-                                                Sep 15, 2018
-                                            </td>
-                                            <td>
-                                                $358.10
-                                            </td>
-                                            <td>
-                                                <span class="badge bg-soft-success text-success">Paid</span>
-                                            </td>
-                                            <td>
-                                                <a href="javascript: void(0);" class="btn btn-xs btn-light"><i class="mdi mdi-pencil"></i></a>
-                                            </td>
-                                        </tr>
+                                        @foreach ($marketingAktivasi as $marketingAktivasi)
+                                            <tr>
+                                                <td>
+                                                    <h5 class="m-0 fw-normal">{{ $marketingAktivasi->detailUser->nama_lengkap }}</h5>
+                                                </td>
+                                                <td>
+                                                    {{ $marketingAktivasi->created_at }}
+                                                </td>
+                                                <td>
+                                                    <span class="badge bg-soft-warning text-warning">Non Aktif</span>
+                                                </td>
+                                                <td>
+                                                    <a href="{{ route('admin.marketing.dashboard.list.account.activation', ['id'=>$marketingAktivasi->id]) }}" class="btn btn-xs btn-success"><i class="mdi mdi-power"></i></a>
+                                                </td>
+                                            </tr> 
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

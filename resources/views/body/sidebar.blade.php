@@ -62,7 +62,7 @@
                                 <a href="crm-contacts.html">Contacts</a>
                             </li>
                             <li>
-                                <a href="crm-customers.html">Marketing Accounts</a>
+                                <a href="{{ route('admin.marketing.dashboard.list') }}">Marketing Accounts</a>
                             </li>
                         </ul>
                     </div>

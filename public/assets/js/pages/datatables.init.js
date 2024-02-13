@@ -64,7 +64,7 @@ $(document).ready(function() {
     }), $("#scroll-vertical-datatable").DataTable({
         paging: false,
         scrollCollapse: true,
-        scrollY: '55vh',
+        scrollY: '51vh',
         "ordering": false,
         "info":     false,
         "searching": false
