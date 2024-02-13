@@ -30,6 +30,8 @@ class AuthenticatedSessionController extends Controller {
         );
         if(Auth::user() && Auth::user()->type == 'super_admin'){
             return redirect()->route('admin.dashboard');
+        } else if(Auth::user() && Auth::user()->type == 'marketing'){
+            return redirect()->route('marketing.dashboard');
         } else { 
             Auth::guard('web')->logout();
             return redirect()->route('login')->with('status', 'You are not authorized to access this page.');

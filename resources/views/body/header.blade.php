@@ -170,7 +170,7 @@
                         <h6 class="text-overflow m-0">Welcome !</h6>
                     </div>
                     <!-- item-->
-                    <a href="{{ route('admin.profile') }}" class="dropdown-item notify-item">
+                    <a href="@if(auth()->user()->type == "super_admin") {{ route('admin.profile') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.profile') }} @endif" class="dropdown-item notify-item">
                         <i class="fe-user"></i>
                         <span>My Account</span>
                     </a>
@@ -180,13 +180,13 @@
                         <span>Settings</span>
                     </a>
                     <!-- item-->
-                    <a href="{{ route('change.password') }}" class="dropdown-item notify-item">
+                    <a href="@if(auth()->user()->type == "super_admin"){{ route('change.password') }}@elseif(auth()->user()->type == "marketing"){{ route('marketing.change.password') }}@endif" class="dropdown-item notify-item">
                         <i class="fe-lock"></i>
                         <span>Change Password</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <!-- item-->
-                    <a href="{{ route('admin.logout') }}" class="dropdown-item notify-item">
+                    <a href="@if(auth()->user()->type == "super_admin") {{ route('admin.logout') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.logout') }} @endif" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
                         <span>Logout</span>
                     </a>

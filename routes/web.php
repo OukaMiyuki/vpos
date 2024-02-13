@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MarketingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,9 +49,16 @@ Route::middleware(['auth', 'user-access:super_admin'])->group(function () {
 });
 
 Route::middleware(['auth', 'user-access:marketing'])->group(function () {
-    Route::get('/marketing/dashboard', function () {
-        return view('index');
-    })->name('marketing.dashboard');
+    Route::get('/marketing/dashboard', [MarketingController::class, 'index'])->name('marketing.dashboard');
+    Route::get('/marketing/logout', [MarketingController::class, 'marketingDestroy'])->name('marketing.logout');
+    Route::get('/marketing/profile', [MarketingController::class, 'marketingProfile'])->name('marketing.profile');
+    Route::post('/marketing/profile/store', [MarketingController::class, 'marketingProfileStore'])->name('marketing.profile.account.store');
+    Route::post('/marketing/profile/info/store', [MarketingController::class, 'marketingProfileInfoStore'])->name('marketing.profile.info.store');
+    Route::get('/marketing/dashboard/invitation_code/list', [MarketingController::class, 'marketingInvitationCodeList'])->name('marketing.dashboard.invitation_code.list');
+    Route::post('/marketing/dashboard/invitation_code/store', [MarketingController::class, 'marketingInvitationCodeStore'])->name('marketing.dashboard.invitation_code.store');
+
+    Route::get('/marketing/change/password', [MarketingController::class, 'changePassword'])->name('marketing.change.password');
+    Route::post('/marketing/update/password', [MarketingController::class, 'updatePassword'])->name('marketing.update.password');
 });
 
 Route::get('/logout', [AdminController::class, 'adminLogoutPage'])->name('admin.logout.page');

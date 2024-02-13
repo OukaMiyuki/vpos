@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use App\Models\DetailUser;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use App\Models\DetailUser;
+use App\Models\InvitationCode;
 
 class User extends Authenticatable {
     use HasApiTokens, HasFactory, Notifiable;
@@ -50,6 +51,10 @@ class User extends Authenticatable {
 
     public function detailUser(){
         return $this->hasOne(DetailUser::class, 'id_user', 'id');
+    }
+
+    public function invitationCode(){
+        return $this->hasMany(InvitationCode::class, 'id_marketing', 'id');
     }
 
     protected function type(): Attribute {

@@ -56,8 +56,8 @@
                                 @endif
                             @endif
                             <div class="text-start mt-3">
-                                <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">@if (auth()->user()->type == "super_admin"){{ $marketingData->phone }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->phone }} @endif</span></p>
-                                <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">@if (auth()->user()->type == "super_admin"){{ $marketingData->email }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->email }} @endif</span></p>
+                                <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ms-2">@if (auth()->user()->type == "super_admin"){{ $marketingData->phone }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->phone }} @endif</span></p>
+                                <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ms-2">@if (auth()->user()->type == "super_admin"){{ $marketingData->email }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->email }} @endif</span></p>
                             </div>
                         </div>
                     </div>
@@ -80,21 +80,21 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="settings">
-                                    <form method="post" action="{{ route('admin.marketing.dashboard.list.detail.account.store') }}" enctype="multipart/form-data">
+                                    <form method="post" action="@if(auth()->user()->type == "super_admin") {{ route('admin.marketing.dashboard.list.detail.account.store') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.profile.account.store') }}@endif" enctype="multipart/form-data">
                                         @csrf
                                         <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Modify Account</h5>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="username" class="form-label">Username</label>
-                                                    <input type="hidden" class="form-control" name="id" id="id" required value="@if (auth()->user()->type == "super_admin"){{ $marketingData->id }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->id }} @endif">
-                                                    <input type="text" class="form-control" name="username" id="username" required value="@if (auth()->user()->type == "super_admin"){{ $marketingData->username }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->username }} @endif" placeholder="Masukkan username akun">
+                                                    <input readonly type="hidden" class="form-control" name="id" id="id" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->id }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->id }}@endif">
+                                                    <input readonly type="text" class="form-control" name="username" id="username" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->username }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->username }}@endif" placeholder="Masukkan username akun">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="email" class="form-label">Email</label>
-                                                    <input type="email" class="form-control" name="email" id="email" required value="@if (auth()->user()->type == "super_admin"){{ $marketingData->email }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->email }} @endif" placeholder="Masukkan email akun">
+                                                    <input type="email" class="form-control" name="email" id="email" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->email }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->email }}@endif" placeholder="Masukkan email akun">
                                                 </div>
                                             </div>
                                             <!-- end col -->
@@ -104,7 +104,7 @@
                                             <div class="@if (auth()->user()->type == "super_admin") col-md-6 @else col-md-12 @endif">
                                                 <div class="mb-3">
                                                     <label for="phone" class="form-label">Phone Number</label>
-                                                    <input type="text" class="form-control" name="phone" id="phone" required value="@if (auth()->user()->type == "super_admin"){{ $marketingData->phone }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->phone }} @endif" placeholder="Enter email">
+                                                    <input type="text" class="form-control" name="phone" id="phone" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->phone }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->phone }}@endif" placeholder="Enter email">
                                                 </div>
                                             </div>
                                             @if (auth()->user()->type == "super_admin")
@@ -144,21 +144,21 @@
                                     </form>
                                 </div>
                                 <div class="tab-pane" id="aboutme">
-                                    <form method="post" action="{{ route('admin.marketing.dashboard.list.detail.info.store') }}">
+                                    <form method="post" action="@if(auth()->user()->type == "super_admin") {{ route('admin.marketing.dashboard.list.detail.info.store') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.profile.info.store') }} @endif">
                                         @csrf
                                         <h5 class="mb-4 text-uppercase"><i class="mdi mdi-account-circle me-1"></i> Update Informasi User</h5>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="nama_lengkap" class="form-label">Nama Lengkap</label>
-                                                    <input type="hidden" class="form-control" name="id" id="id" required value="@if (auth()->user()->type == "super_admin"){{ $marketingData->detailUser->id }}@elseif(auth()->user->type == "marketing"){{ auth()->user()->detailUser->id }} @endif">
-                                                    <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required value="@if(auth()->user()->type == "super_admin") {{ $marketingData->detailUser->nama_lengkap }} @elseif(auth()->user()->type == "marketing") {{ auth()->user()->detailUser->nama_lengkap }} @endif" placeholder="Masukkan nama lengkap">
+                                                    <input type="hidden" class="form-control" name="id" id="id" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->detailUser->id }}@elseif(auth()->user()->type == "marketing"){{auth()->user()->detailUser->id}}@endif">
+                                                    <input type="text" class="form-control" name="nama_lengkap" id="nama_lengkap" required value="@if(auth()->user()->type == "super_admin"){{$marketingData->detailUser->nama_lengkap}}@elseif(auth()->user()->type == "marketing"){{auth()->user()->detailUser->nama_lengkap}}@endif" placeholder="Masukkan nama lengkap">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="no_ktp" class="form-label">Nomor KTP</label>
-                                                    <input type="text" class="form-control" name="no_ktp" id="no_ktp" required value="@if(auth()->user()->type == "super_admin") {{ $marketingData->detailUser->no_ktp }} @elseif(auth()->user()->type == "marketing") {{ auth()->user()->detailUser->no_ktp }} @endif" placeholder="Masukkan nomor KTP">
+                                                    <input type="text" class="form-control" name="no_ktp" id="no_ktp" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->detailUser->no_ktp }}@elseif(auth()->user()->type == "marketing"){{auth()->user()->detailUser->no_ktp}}@endif" placeholder="Masukkan nomor KTP">
                                                 </div>
                                             </div>
                                         </div>
@@ -166,13 +166,13 @@
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
-                                                    <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" required value="@if(auth()->user()->type == "super_admin") {{ $marketingData->detailUser->tempat_lahir }} @elseif(auth()->user()->type == "marketing") {{ auth()->user()->detailUser->tempat_lahir }} @endif" placeholder="Masukkan tempat lahir">
+                                                    <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" required value="@if(auth()->user()->type == "super_admin"){{ $marketingData->detailUser->tempat_lahir }}@elseif(auth()->user()->type == "marketing"){{ auth()->user()->detailUser->tempat_lahir }}@endif" placeholder="Masukkan tempat lahir">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="tanggal_lahir" class="form-label">Tanggal Lahir</label>
-                                                    <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" @if(auth()->user()->type == 'super_admin') value="{{ $marketingData->detailUser->tanggal_lahir }}" @elseif(auth()->user()->type == 'marketing') {{ auth()->user()->detailUser->tanggal_lahir }} @endif placeholder="Masukkan tanggal lahir" required>
+                                                    <input type="date" class="form-control" name="tanggal_lahir" id="tanggal_lahir" @if(auth()->user()->type == 'super_admin') value="{{ $marketingData->detailUser->tanggal_lahir }}" @elseif(auth()->user()->type == 'marketing') value="{{ auth()->user()->detailUser->tanggal_lahir }}"@endif placeholder="Masukkan tanggal lahir" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -197,7 +197,7 @@
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label for="alamat" class="form-label">Alamat</label>
-                                                    <textarea placeholder="Masukkan alamat anda" class="form-control" id="alamat" name="alamat" rows="5" spellcheck="false" required>@if(auth()->user()->type == "super_admin") {!! $marketingData->detailUser->alamat !!} @elseif(auth()->user()->type == "marketing") {!! auth()->user()->detailUser->alamat !!} @endif</textarea>
+                                                    <textarea placeholder="Masukkan alamat anda" class="form-control" id="alamat" name="alamat" rows="5" spellcheck="false" required>@if(auth()->user()->type == "super_admin"){!! $marketingData->detailUser->alamat !!}@elseif(auth()->user()->type == "marketing"){!! auth()->user()->detailUser->alamat !!}@endif</textarea>
                                                 </div>
                                             </div>
                                         </div>

@@ -24,7 +24,9 @@ class RedirectIfAuthenticated
                 // return redirect(RouteServiceProvider::HOME);
                 if(Auth::user()->type == 'super_admin'){
                     return redirect()->route('admin.dashboard');
-                } 
+                } else if(Auth::user()->type == 'marketing'){
+                    return redirect()->route('marketing.dashboard');
+                }
             }
         }
 

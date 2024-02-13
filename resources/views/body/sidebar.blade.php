@@ -35,7 +35,7 @@
             <ul id="side-menu">
                 <li class="menu-title">Navigation</li>
                 <li>
-                    <a href="{{ route('admin.dashboard') }}">
+                    <a href="@if(auth()->user()->type == "super_admin") {{ route('admin.dashboard') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.dashboard') }} @endif">
                         <i class="mdi mdi-view-dashboard-outline"></i>
                         <span> Dashboards </span>
                     </a>
@@ -47,46 +47,69 @@
                     <span> Calendar </span>
                     </a>
                 </li>
-                <li>
-                    <a href="#marketing" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-tie-voice"></i>
-                        <span> Marketing </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="marketing">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="{{ route('admin.marketing.dashboard') }}">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="crm-contacts.html">Contacts</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.marketing.dashboard.list') }}">Marketing Accounts</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <a href="#sidebarCrm" data-bs-toggle="collapse">
-                        <i class="mdi mdi-account-multiple-outline"></i>
-                        <span> CRM </span>
-                        <span class="menu-arrow"></span>
-                    </a>
-                    <div class="collapse" id="sidebarCrm">
-                        <ul class="nav-second-level">
-                            <li>
-                                <a href="crm-dashboard.html">Dashboard</a>
-                            </li>
-                            <li>
-                                <a href="crm-contacts.html">Contacts</a>
-                            </li>
-                            <li>
-                                <a href="crm-customers.html">Customers</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                @if (auth()->user()->type == "super_admin")
+                    <li>
+                        <a href="#marketing" data-bs-toggle="collapse">
+                            <i class="mdi mdi-account-tie-voice"></i>
+                            <span> Marketing </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="marketing">
+                            <ul class="nav-second-level">
+                                <li>
+                                    <a href="{{ route('admin.marketing.dashboard') }}">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="crm-contacts.html">Contacts</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.marketing.dashboard.list') }}">Marketing Accounts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#sidebarCrm" data-bs-toggle="collapse">
+                            <i class="mdi mdi-account-multiple-outline"></i>
+                            <span> CRM </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarCrm">
+                            <ul class="nav-second-level">
+                                <li>
+                                    <a href="crm-dashboard.html">Dashboard</a>
+                                </li>
+                                <li>
+                                    <a href="crm-contacts.html">Contacts</a>
+                                </li>
+                                <li>
+                                    <a href="crm-customers.html">Customers</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                @elseif (auth()->user()->type == "marketing")
+                    <li>
+                        <a href="#marketing" data-bs-toggle="collapse">
+                            <i class="mdi mdi-qrcode-scan"></i>
+                            <span> Invitation Code </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="marketing">
+                            <ul class="nav-second-level">
+                                <li>
+                                    <a href="{{ route('marketing.dashboard.invitation_code.list') }}">Invitation Code List</a>
+                                </li>
+                                <li>
+                                    <a href="crm-contacts.html">Contacts</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('admin.marketing.dashboard.list') }}">Marketing Accounts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                @endif
             </ul>
         </div>
         <!-- End Sidebar -->
