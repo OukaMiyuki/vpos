@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Route::middleware(['auth', 'user-access:super_admin'])->group(function () {
     Route::get('/admin/dashboard', function () {
-        return view('index');
+        return view('admin.admin_dashboard');
     })->name('admin.dashboard');
     Route::get('/admin/logout', [AdminController::class, 'adminDestroy'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'adminProfile'])->name('admin.profile');
@@ -45,6 +45,12 @@ Route::middleware(['auth', 'user-access:super_admin'])->group(function () {
     Route::get('/admin/dashboard/marketing/list/profile/activation/{id}', [AdminController::class, 'adminMarketingProfileAccountActivation'])->name('admin.marketing.dashboard.list.account.activation');
     Route::get('/change/password', [AdminController::class, 'changePassword'])->name('change.password');
     Route::post('/update/password', [AdminController::class, 'updatePassword'])->name('update.password');
+});
+
+Route::middleware(['auth', 'user-access:marketing'])->group(function () {
+    Route::get('/marketing/dashboard', function () {
+        return view('index');
+    })->name('marketing.dashboard');
 });
 
 Route::get('/logout', [AdminController::class, 'adminLogoutPage'])->name('admin.logout.page');

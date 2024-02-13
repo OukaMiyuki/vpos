@@ -1,5 +1,5 @@
-@extends('admin_dashboard')
-@section('admin')
+@extends('layout_dashboard')
+@section('content')
     <div class="content">
         <!-- Start Content-->
         <div class="container-fluid">
