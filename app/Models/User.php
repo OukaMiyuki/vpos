@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use App\Models\DetailUser;
 use App\Models\InvitationCode;
@@ -62,6 +63,18 @@ class User extends Authenticatable {
             get: fn ($value) =>  ["super_admin", "marketing"][$value],
         );
     }
+
+    public function getJWTIdentifier() {
+        return $this->getKey();
+    }
+    /**
+     * Return a key value array, containing any custom claims to be added to the JWT.
+     *
+     * @return array
+     */
+    public function getJWTCustomClaims() {
+        return [];
+    }    
 
     public function detailUserStore($model){
         $DetailUser = new DetailUser();
