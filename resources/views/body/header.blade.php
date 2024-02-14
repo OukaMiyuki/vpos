@@ -248,7 +248,7 @@
                             <span>Tambah Marketing</span>
                         </a>
                         <a href="javascript:void(0);" class="dropdown-item">
-                            <i class="mdi mdi-account-tie-voice me-1 me-1"></i>
+                            <i class="mdi mdi-account-tie-voice me-1"></i>
                             <span>Marketing Accounts</span>
                         </a>
                         <!-- item-->
