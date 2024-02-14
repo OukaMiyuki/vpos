@@ -200,29 +200,29 @@
         </ul>
         <!-- LOGO -->
         <div class="logo-box">
-            <a href="index.html" class="logo logo-dark text-center">
+            <a href="@if(auth()->user()->type == "super_admin") {{ route('admin.dashboard') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.dashboard') }} @endif" class="logo logo-dark text-center">
                 <span class="logo-sm">
-                    <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
+                    <img src="{{ asset('assets/images/logo/Logo2.png') }}" alt="" height="20">
                     <!-- <span class="logo-lg-text-light">UBold</span> -->
                 </span>
                 <span class="logo-lg">
-                    <img src="{{ asset('assets/images/logo-dark.png') }}" alt="" height="20">
+                    <img src="{{ asset('assets/images/logo/large.png') }}" alt="" height="40">
                     <!-- <span class="logo-lg-text-light">U</span> -->
                 </span>
             </a>
-            <a href="index.html" class="logo logo-light text-center">
-            <span class="logo-sm">
-            <img src="{{ asset('assets/images/logo-sm.png') }}" alt="" height="22">
-            </span>
-            <span class="logo-lg">
-            <img src="{{ asset('assets/images/logo-light.png') }}" alt="" height="20">
-            </span>
+            <a href="@if(auth()->user()->type == "super_admin") {{ route('admin.dashboard') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.dashboard') }} @endif" class="logo logo-light text-center">
+                <span class="logo-sm">
+                    <img src="{{ asset('assets/images/logo/Logo2.png') }}" alt="" height="20">
+                </span>
+                <span class="logo-lg">
+                    <img src="{{ asset('assets/images/logo/large.png') }}" alt="" height="40">
+                </span>
             </a>
         </div>
         <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
             <li>
                 <button class="button-menu-mobile waves-effect waves-light">
-                <i class="fe-menu"></i>
+                    <i class="fe-menu"></i>
                 </button>
             </li>
             <li>
@@ -238,35 +238,35 @@
             </li>
             <li class="dropdown d-none d-xl-block">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                Create New
-                <i class="mdi mdi-chevron-down"></i> 
+                    Quick Menu
+                    <i class="mdi mdi-chevron-down"></i> 
                 </a>
                 <div class="dropdown-menu">
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                    <i class="fe-briefcase me-1"></i>
-                    <span>New Projects</span>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                    <i class="fe-user me-1"></i>
-                    <span>Create Users</span>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                    <i class="fe-bar-chart-line- me-1"></i>
-                    <span>Revenue Report</span>
-                    </a>
-                    <!-- item-->
-                    <a href="javascript:void(0);" class="dropdown-item">
-                    <i class="fe-settings me-1"></i>
-                    <span>Settings</span>
-                    </a>
+                    @if (auth()->user()->type == "super_admin")
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="mdi mdi-account-multiple-plus me-1"></i>
+                            <span>Tambah Marketing</span>
+                        </a>
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="mdi mdi-account-tie-voice me-1 me-1"></i>
+                            <span>Marketing Accounts</span>
+                        </a>
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="fe-bar-chart-line- me-1"></i>
+                            <span>Revenue Report</span>
+                        </a>
+                        <!-- item-->
+                        <a href="javascript:void(0);" class="dropdown-item">
+                            <i class="fe-settings me-1"></i>
+                            <span>Settings</span>
+                        </a>
+                    @endif
                     <div class="dropdown-divider"></div>
                     <!-- item-->
                     <a href="javascript:void(0);" class="dropdown-item">
-                    <i class="fe-headphones me-1"></i>
-                    <span>Help & Support</span>
+                        <i class="fe-headphones me-1"></i>
+                        <span>Help & Support</span>
                     </a>
                 </div>
             </li>

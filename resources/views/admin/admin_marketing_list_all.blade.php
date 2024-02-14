@@ -8,22 +8,13 @@
                 <div class="col-12">
                     <div class="page-title-box">
                         <div class="page-title-right">
-                            <form class="d-flex align-items-center mb-3">
-                                <div class="input-group input-group-sm">
-                                    <input type="text" class="form-control border-0" id="dash-daterange">
-                                    <span class="input-group-text bg-blue border-blue text-white">
-                                    <i class="mdi mdi-calendar-range"></i>
-                                    </span>
-                                </div>
-                                <a href="javascript: void(0);" class="btn btn-blue btn-sm ms-2">
-                                <i class="mdi mdi-autorenew"></i>
-                                </a>
-                                <a href="javascript: void(0);" class="btn btn-blue btn-sm ms-1">
-                                <i class="mdi mdi-filter-variant"></i>
-                                </a>
-                            </form>
+                            <ol class="breadcrumb m-0">
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">UBold</a></li>
+                                <li class="breadcrumb-item"><a href="javascript: void(0);">Extra Pages</a></li>
+                                <li class="breadcrumb-item active">Invoice</li>
+                            </ol>
                         </div>
-                        <h4 class="page-title">Data Marketing</h4>
+                        <h4 class="page-title">Invoice</h4>
                     </div>
                 </div>
             </div>
@@ -80,15 +71,15 @@
                                                 <td>
                                                     <a href="{{ route('admin.marketing.dashboard.list.account.activation', ['id'=>$usrMarketing->id]) }}">
                                                         @if($usrMarketing->is_active == 1)
-                                                            <button title="Non Aktifkan" type="button" class="btn btn-warning rounded-pill waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
+                                                            <button title="Non Aktifkan" type="button" class="btn btn-warning rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
                                                         @else
-                                                            <button title="Aktifkan" type="button" class="btn btn-success rounded-pill waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
+                                                            <button title="Aktifkan" type="button" class="btn btn-success rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
                                                         @endif
                                                     </a>
                                                     <a href="{{ route('admin.marketing.dashboard.list.detail', ['id'=>$usrMarketing->id]) }}">
-                                                        <button title="Lihat detail user" type="button" class="btn btn-info rounded-pill waves-effect waves-light"><span class="mdi mdi-eye"></span></button>&nbsp;
+                                                        <button title="Lihat detail user" type="button" class="btn btn-info rounded-circle waves-effect waves-light"><span class="mdi mdi-eye"></span></button>&nbsp;
                                                     </a>
-                                                    <button title="Hapus user" type="button" class="btn btn-danger rounded-pill waves-effect waves-light"><span class="mdi mdi-trash-can"></span></button>
+                                                    <button title="Hapus user" type="button" class="btn btn-danger rounded-circle waves-effect waves-light"><span class="mdi mdi-trash-can"></span></button>
                                                 </td>
                                             </tr>
                                         @endforeach

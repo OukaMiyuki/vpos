@@ -42,9 +42,9 @@
                 </li>
                 <li class="menu-title mt-2">Manager</li>
                 <li>
-                    <a href="apps-calendar.html">
-                    <i class="mdi mdi-calendar"></i>
-                    <span> Calendar </span>
+                    <a href="@if(auth()->user()->type == "super_admin") {{ route('admin.dashboard.calendar') }} @elseif(auth()->user()->type == "marketing") {{ route('marketing.dashboard.calendar') }} @endif">
+                        <i class="mdi mdi-calendar"></i>
+                        <span> Calendar </span>
                     </a>
                 </li>
                 @if (auth()->user()->type == "super_admin")
@@ -60,9 +60,6 @@
                                     <a href="{{ route('admin.marketing.dashboard') }}">Dashboard</a>
                                 </li>
                                 <li>
-                                    <a href="crm-contacts.html">Contacts</a>
-                                </li>
-                                <li>
                                     <a href="{{ route('admin.marketing.dashboard.list') }}">Marketing Accounts</a>
                                 </li>
                             </ul>
@@ -70,20 +67,34 @@
                     </li>
                     <li>
                         <a href="#sidebarCrm" data-bs-toggle="collapse">
-                            <i class="mdi mdi-account-multiple-outline"></i>
-                            <span> CRM </span>
+                            <i class="mdi mdi-storefront-outline"></i>
+                            <span> Merchant </span>
                             <span class="menu-arrow"></span>
                         </a>
                         <div class="collapse" id="sidebarCrm">
                             <ul class="nav-second-level">
                                 <li>
-                                    <a href="crm-dashboard.html">Dashboard</a>
+                                    <a href="{{ route('admin.merchant.list') }}">Merchant List</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#finance" data-bs-toggle="collapse">
+                            <i class="mdi mdi-cash-multiple"></i>
+                            <span> Finance </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="finance">
+                            <ul class="nav-second-level">
+                                <li>
+                                    <a href="crm-dashboard.html">Penghasilan</a>
                                 </li>
                                 <li>
-                                    <a href="crm-contacts.html">Contacts</a>
+                                    <a href="crm-contacts.html">Penarikan</a>
                                 </li>
                                 <li>
-                                    <a href="crm-customers.html">Customers</a>
+                                    <a href="crm-customers.html">Saldo</a>
                                 </li>
                             </ul>
                         </div>

@@ -68,6 +68,13 @@ $(document).ready(function() {
         "ordering": false,
         "info":     false,
         "searching": false
+    }), $("#inv_table_marketing_profile").DataTable({
+        paging: true,
+        scrollCollapse: true,
+        scrollY: '51vh',
+        "ordering": true,
+        "info":     true,
+        "searching": true
     }), $("#scroll-horizontal-datatable").DataTable({
         scrollX: !0,
         language: {

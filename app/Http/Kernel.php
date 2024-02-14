@@ -21,7 +21,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
-        \App\Http\Middleware\ForceJsonResponse::class,
+        // \App\Http\Middleware\ForceJsonResponse::class,
     ];
 
     /**
@@ -37,7 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\ForceJsonResponse::class,
+            // \App\Http\Middleware\ForceJsonResponse::class,
         ],
 
         'api' => [
@@ -73,6 +73,6 @@ class Kernel extends HttpKernel
         'user-access' => \App\Http\Middleware\UserAccess::class,
         'restrictRole' => \App\Http\Middleware\CheckRole::class,
         'auth.jwt'=>\App\Http\Middleware\JwtMiddleWare::class,
-        'json' => \App\Http\Middleware\ForceJsonResponse::class,
+        // 'json' => \App\Http\Middleware\ForceJsonResponse::class,
     ];
 }

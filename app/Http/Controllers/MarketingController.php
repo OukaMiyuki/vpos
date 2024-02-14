@@ -138,4 +138,8 @@ class MarketingController extends Controller {
         );
         return redirect()->back()->with($notification);
     }
+
+    public function calendar(){
+        return view('marketing.marketing_calendar');
+    }
 }

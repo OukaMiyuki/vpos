@@ -65,8 +65,8 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="text-end">
-                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">127</span></h3>
-                                        <p class="text-muted mb-1 text-truncate">Invitation Code</p>
+                                        <h3 class="text-dark mt-1"><span data-plugin="counterup">{{ $invitationCode }}</span></h3>
+                                        <p class="text-muted mb-1 text-truncate">Invitation Codes</p>
                                         <a href="" class="btn btn-blue btn-sm ms-2">
                                             <i class="mdi mdi-eye"></i>
                                         </a>

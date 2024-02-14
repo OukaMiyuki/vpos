@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\DetailUser;
+use App\Models\InvitationCode;
 
 class AdminController extends Controller {
 
@@ -43,10 +44,6 @@ class AdminController extends Controller {
         $adminData->email = $request->email;
         $adminData->phone = $request->phone;
         $adminData->is_active = $request->status;
-
-        // if($request->password){
-        //     $adminData->password = Hash::make($request->password);
-        // }
 
         if($request->hasFile('photo')){
             $file = $request->file('photo');
@@ -125,9 +122,10 @@ class AdminController extends Controller {
 
     public function adminMarketingDashboard(){
         $marketingList = User::where('type', 1)->count();
+        $invitationCode = InvitationCode::count();
         $marketingData = User::with('detailUser')->where('type', 1)->where('is_active', 1)->latest()->take(5)->get();
         $marketingAktivasi = User::with('detailUser')->where('type', 1)->where('is_active', 0)->latest()->take(10)->get();
-        return view('admin.admin_marketing_dashboard', compact('marketingList', 'marketingData', 'marketingAktivasi'));
+        return view('admin.admin_marketing_dashboard', compact('marketingList', 'marketingData', 'marketingAktivasi', 'invitationCode'));
     }
 
     public function adminMarketingList(){
@@ -137,7 +135,7 @@ class AdminController extends Controller {
 
     public function adminMarketingProfileDetail($id){
         $marketingData = User::with('detailUser')->find($id);
-        return view('marketing.marketing_profile', compact('marketingData'));
+        return view('admin.admin_marketing_detail', compact('marketingData'));
     }
 
     public function adminMarketingProfileDetailAccountStore(Request $request){
@@ -210,5 +208,21 @@ class AdminController extends Controller {
             'alert-type' => 'info',
         );
         return redirect()->back()->with($notification);      
+    }
+
+    public function calendar(){
+        return view('admin.admin_calendar');
+    }
+    
+    public function adminMarketingProfileInvitationCodeInfo(){
+        return view('admin.admin_marketing_invitation_code_info');
+    }
+
+    public function adminMarketingProfileInvitationCodeInvoice(){
+        return view('admin.admin_marketing_invitation_code_invoice');
+    }
+
+    public function adminMerchantList(){
+        return view('admin.admin_merchant_list');
     }
 }
