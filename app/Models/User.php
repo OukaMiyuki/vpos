@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use App\Models\DetailUser;
 use App\Models\InvitationCode;
 
-class User extends Authenticatable {
+class User extends Authenticatable implements JWTSubject {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**

@@ -29,18 +29,18 @@ class RegisteredUserController extends Controller {
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse {
-        // $request->validate([
-        //     'username' => ['required', 'string', 'max:20', 'unique:'.User::class],
-        //     'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-        //     'nama_lengkap' => ['required', 'string', 'max:100'],
-        //     'no_ktp' => ['required', 'string', 'numeric', 'max:16', 'unique:'.DetailUser::class],
-        //     'phone' => ['required', 'string', 'numeric', 'max:20', 'unique:'.User::class],
-        //     'jenis_kelamin' => ['required'],
-        //     'tempat_lahir' => ['required'],
-        //     'tanggal_lahir' => ['required'],
-        //     'alamat' => ['required', 'string', 'max:255'],
-        //     'password' => 'required|confirmed|min:8',
-        // ]);
+        $request->validate([
+            'username' => ['required', 'string', 'max:20', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'nama_lengkap' => ['required', 'string', 'max:100'],
+            'no_ktp' => ['required', 'string', 'numeric', 'digits:16', 'unique:'.DetailUser::class],
+            'phone' => ['required', 'string', 'numeric', 'digits_between:1,20', 'unique:'.User::class],
+            'jenis_kelamin' => ['required'],
+            'tempat_lahir' => ['required'],
+            'tanggal_lahir' => ['required'],
+            'alamat' => ['required', 'string', 'max:255'],
+            'password' => 'required|confirmed|min:8',
+        ]);
 
         $user = User::create([
             'username' => $request->username,
