@@ -71,12 +71,18 @@ class AuthController extends Controller {
         return response()->json([
             'message' => 'Login success',
             'access_token' => $token,
-            'token_type' => 'Bearer'
+            'token_type' => 'Bearer',
+            'type' => $user->type
         ]);
     }
 
-    public function profile(){
-        
+    public function showProfile(){
+        $id = Auth::user()->id;
+        $user = User::with('detailUser')->find($id);
+        return response()->json([
+            'message' => 'User Profile',
+            'user' => $user
+        ]);
     }
 
     public function logout() {

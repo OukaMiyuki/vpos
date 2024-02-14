@@ -71,6 +71,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'user-access' => \App\Http\Middleware\UserAccess::class,
+        'restrictRole' => \App\Http\Middleware\CheckRole::class,
         'auth.jwt'=>\App\Http\Middleware\JwtMiddleWare::class,
         'json' => \App\Http\Middleware\ForceJsonResponse::class,
     ];

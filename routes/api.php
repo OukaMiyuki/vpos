@@ -24,5 +24,5 @@ Route::post('/login', [\App\Http\Controllers\Api\AuthController::class, 'login']
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::post('/logout', [\App\Http\Controllers\Api\AuthController::class, 'logout']);
-    Route::post('/profile', [\App\Http\Controllers\Api\AuthController::class, 'profile']);
+    Route::get('/users', [\App\Http\Controllers\Api\AuthController::class, 'showProfile'])->middleware('restrictRole:super_admin');
 });
