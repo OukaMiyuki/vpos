@@ -63,8 +63,8 @@ class User extends Authenticatable implements JWTSubject {
         return $this->hasMany(Merchant::class, 'id_marketing', 'id')->where('type', "marketing")->get();;
     }
 
-    public function userTenant(){
-        return $this->hasOne(Merchant::class, 'id_tenant', 'id')->where('type', "tenant")->first();;
+    public function userMerchant(){
+        return $this->hasOne(Merchant::class, 'id_tenant', 'id')->where('id_marketing', auth()->user()->id);
     }
 
     protected function type(): Attribute {
@@ -95,5 +95,14 @@ class User extends Authenticatable implements JWTSubject {
         $DetailUser->jenis_kelamin = request()->jenis_kelamin;
         $DetailUser->alamat = request()->alamat;
         $DetailUser->save();
+    }
+
+    public function merchantStore($model){
+        $id_marketing = InvitationCode::where('code', request('inv_code'))->first();
+        $Merchant = new Merchant();
+        $Merchant->id_tenant = $model->id;
+        $Merchant->id_marketing = $id_marketing->id_marketing;
+        $Merchant->inv_code = $id_marketing->id;
+        $Merchant->save();
     }
 }

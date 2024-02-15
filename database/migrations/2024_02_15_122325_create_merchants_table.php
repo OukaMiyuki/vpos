@@ -13,6 +13,16 @@ return new class extends Migration
     {
         Schema::create('merchants', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_tenant')->unique();
+            $table->bigInteger('id_marketing');
+            $table->bigInteger('inv_code');
+            $table->string('nama_usaha')->nullable();
+            $table->string('jenis_usaha')->nullable();
+            $table->text('alamat')->nullable();
+            $table->integer('status_ami')->nullable();
+            $table->text('deskripsi_usaha')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('desc_image')->nullable();
             $table->timestamps();
         });
     }
