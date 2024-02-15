@@ -142,4 +142,8 @@ class MarketingController extends Controller {
     public function calendar(){
         return view('marketing.marketing_calendar');
     }
+
+    public function merchantListAll(){
+        return view('marketing.marketing_merchant_list');
+    }
 }

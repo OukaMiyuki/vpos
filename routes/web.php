@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Auth;    
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MarketingController;
@@ -49,6 +49,7 @@ Route::middleware(['auth', 'user-access:super_admin'])->group(function () {
     Route::get('/admin/dashboard/marketing/profile/invitation_code', [AdminController::class, 'adminMarketingProfileInvitationCodeInfo'])->name('admin.marketing.dashboard.list.detail.inv_code');
     Route::get('/admin/dashboard/marketing/profile/invitation_code/invoice', [AdminController::class, 'adminMarketingProfileInvitationCodeInvoice'])->name('admin.marketing.dashboard.list.detail.inv_code.invoice');
     Route::get('/admin/dashboard/merchant/list', [AdminController::class, 'adminMerchantList'])->name('admin.merchant.list');
+    Route::get('/admin/dashboard/finace', [AdminController::class, 'adminFinanceData'])->name('admin.finance.data');
     Route::get('/change/password', [AdminController::class, 'changePassword'])->name('change.password');
     Route::post('/update/password', [AdminController::class, 'updatePassword'])->name('update.password');
 });
@@ -61,6 +62,8 @@ Route::middleware(['auth', 'user-access:marketing'])->group(function () {
     Route::post('/marketing/profile/store', [MarketingController::class, 'marketingProfileStore'])->name('marketing.profile.account.store');
     Route::post('/marketing/profile/info/store', [MarketingController::class, 'marketingProfileInfoStore'])->name('marketing.profile.info.store');
     Route::get('/marketing/dashboard/invitation_code/list', [MarketingController::class, 'marketingInvitationCodeList'])->name('marketing.dashboard.invitation_code.list');
+    Route::get('/marketing/dashboard/merchant/list', [MarketingController::class, 'merchantListAll'])->name('marketing.dashboard.merchant.list');
+    // Route::get('/marketing/dashboard/merchant/list', [MarketingController::class, 'merchantListAll'])->name('marketing.dashboard.merchant.list');
     Route::post('/marketing/dashboard/invitation_code/store', [MarketingController::class, 'marketingInvitationCodeStore'])->name('marketing.dashboard.invitation_code.store');
 
     Route::get('/marketing/change/password', [MarketingController::class, 'changePassword'])->name('marketing.change.password');

@@ -88,13 +88,7 @@
                         <div class="collapse" id="finance">
                             <ul class="nav-second-level">
                                 <li>
-                                    <a href="crm-dashboard.html">Penghasilan</a>
-                                </li>
-                                <li>
-                                    <a href="crm-contacts.html">Penarikan</a>
-                                </li>
-                                <li>
-                                    <a href="crm-customers.html">Saldo</a>
+                                    <a href="{{ route('admin.finance.data') }}">Penghasilan</a>
                                 </li>
                             </ul>
                         </div>
@@ -111,11 +105,41 @@
                                 <li>
                                     <a href="{{ route('marketing.dashboard.invitation_code.list') }}">Invitation Code List</a>
                                 </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#sidebarCrm" data-bs-toggle="collapse">
+                            <i class="mdi mdi-storefront-outline"></i>
+                            <span> Merchant </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="sidebarCrm">
+                            <ul class="nav-second-level">
                                 <li>
-                                    <a href="crm-contacts.html">Contacts</a>
+                                    <a href="{{ route('marketing.dashboard.merchant.list') }}">Merchant List</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.marketing.dashboard.list') }}">Marketing Accounts</a>
+                                    <a href="{{ route('admin.merchant.list') }}">Data Penarikan</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#financeMarketing" data-bs-toggle="collapse">
+                            <i class="mdi mdi-cash-multiple"></i>
+                            <span> Finance </span>
+                            <span class="menu-arrow"></span>
+                        </a>
+                        <div class="collapse" id="financeMarketing">
+                            <ul class="nav-second-level">
+                                <li>
+                                    <a href="{{ route('admin.merchant.list') }}">Penghasilan</a>
+                                </li>
+                            </ul>
+                            <ul class="nav-second-level">
+                                <li>
+                                    <a href="{{ route('admin.merchant.list') }}">Penarikan</a>
                                 </li>
                             </ul>
                         </div>

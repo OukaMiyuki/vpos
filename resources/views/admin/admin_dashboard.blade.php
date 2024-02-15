@@ -143,7 +143,7 @@
                                 <div class="col-9">
                                     <div class="text-end">
                                         <h3 class="text-dark mt-1">Rp. <span data-plugin="counterup">3000000</span></h3>
-                                        <p class="text-muted mb-1 text-truncate">Total Pemasukan hari ini</p>
+                                        <p class="text-muted mb-1 text-truncate">Total penarikan hari ini</p>
                                         <a href="{{ route('admin.marketing.dashboard.list') }}" class="btn btn-blue btn-sm ms-2">
                                             <i class="mdi mdi-eye"></i>
                                         </a>
