@@ -143,7 +143,27 @@ class MarketingController extends Controller {
         return view('marketing.marketing_calendar');
     }
 
-    public function merchantListAll(){
+    public function marketingInvitationCodeDetail(){
+        return view('marketing.marketing_invitation_code_detail');
+    }
+
+    public function marketingMerchantListAll(){
         return view('marketing.marketing_merchant_list');
+    }
+
+    public function marketingTeantListAll(){
+        return view('marketing.marketing_tenant_list');
+    }
+
+    public function marketingMerchantDetail() {
+        return view('marketing.marketing_merchant_detail');
+    }
+
+    public function marketingTenantDetail(){
+        return view('marketing.marketing_tenant_detail');
+    }
+
+    public function marketingCashOutList() {
+        return view('marketing.marketing_merchant_data_penarikan');
     }
 }

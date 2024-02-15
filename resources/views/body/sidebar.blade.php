@@ -117,29 +117,13 @@
                         <div class="collapse" id="sidebarCrm">
                             <ul class="nav-second-level">
                                 <li>
+                                    <a href="{{ route('marketing.dashboard.tenant.list') }}">Tenant List</a>
+                                </li>
+                                <li>
                                     <a href="{{ route('marketing.dashboard.merchant.list') }}">Merchant List</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('admin.merchant.list') }}">Data Penarikan</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#financeMarketing" data-bs-toggle="collapse">
-                            <i class="mdi mdi-cash-multiple"></i>
-                            <span> Finance </span>
-                            <span class="menu-arrow"></span>
-                        </a>
-                        <div class="collapse" id="financeMarketing">
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a href="{{ route('admin.merchant.list') }}">Penghasilan</a>
-                                </li>
-                            </ul>
-                            <ul class="nav-second-level">
-                                <li>
-                                    <a href="{{ route('admin.merchant.list') }}">Penarikan</a>
+                                    <a href="{{ route('marketing.dashboard.merchant.cashout.list') }}">Data Penarikan</a>
                                 </li>
                             </ul>
                         </div>

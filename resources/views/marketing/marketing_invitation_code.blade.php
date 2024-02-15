@@ -72,7 +72,9 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <button title="Lihat detail user" type="button" class="btn btn-info rounded-pill waves-effect waves-light"><span class="mdi mdi-eye"></span></button>&nbsp;
+                                                    <a href="{{ route('marketing.dashboard.invitation_code.detail') }}">
+                                                        <button title="Lihat detail user" type="button" class="btn btn-info rounded-pill waves-effect waves-light"><span class="mdi mdi-eye"></span></button>&nbsp;
+                                                    </a>
                                                 </td>
                                             </tr>
                                         @endforeach

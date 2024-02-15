@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <img src="{{ !empty(auth()->user()->photo) ? Storage::url('images/profile/'.auth()->user()->photo) : asset('assets/images/blank_profile.png') }}" class="rounded-circle avatar-lg img-thumbnail" alt="profile-image">
                             <h4 class="mb-0">{{ auth()->user()->detailUser->nama_lengkap }}</h4>
-                            <p class="text-muted">{{ auth()->user()->username }}</p>
+                            <p class="text-muted">{{ auth()->user()->type }}</p>
                             @if(auth()->user()->is_active == 1)
                                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Aktif</button>
                             @else 

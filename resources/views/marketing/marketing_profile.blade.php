@@ -28,7 +28,7 @@
                                 {{ auth()->user()->detailUser->nama_lengkap }}
                             </h4>
                             <p class="text-muted">
-                                {{ auth()->user()->username }}
+                                {{ auth()->user()->type }}
                             </p>
                             @if(auth()->user()->is_active == 1)
                                 <button type="button" class="btn btn-success btn-xs waves-effect mb-2 waves-light">Aktif</button>
@@ -55,6 +55,11 @@
                                 <li class="nav-item">
                                     <a href="#aboutme" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
                                         Detail Information
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#saldo" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                        Penarikan Saldo
                                     </a>
                                 </li>
                             </ul>
@@ -166,6 +171,32 @@
                                         </div>
                                         <div class="text-end">
                                             <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane" id="saldo">
+                                    <h5 class="mb-4 text-uppercase"><i class="mdi mdi-cash-multiple me-1"></i> Proses Penarikan Saldo</h5>
+                                    <div class="col-md-12">
+                                        <div class="mb-3">
+                                            <label for="saldo" class="form-label">Saldo Anda (Rp.)</label>
+                                            <input readonly type="text" class="form-control" name="saldo" id="saldo" required value="1000000" placeholder="Masukkan jumlah saldo">
+                                        </div>
+                                    </div>
+                                    <form method="post" action="{{ route('marketing.profile.info.store') }}">
+                                        @csrf
+                                        <div class="row">
+                                            <input type="hidden" class="form-control" name="id" id="id" required value="{{auth()->user()->detailUser->id}}">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label for="tempat_lahir" class="form-label">Nominal Tarik</label>
+                                                    <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" required value="" placeholder="Masukkan nominal tarik dana">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="text-end">
+                                            <button type="submit" class="btn btn-success waves-effect waves-light mt-2"><i class="mdi mdi-content-save"></i> Tarik</button>
                                         </div>
                                     </form>
                                 </div>

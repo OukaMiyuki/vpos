@@ -65,29 +65,25 @@
                             <div class="pt-2 pb-2">
                                 <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
 
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Freddie J. Plourde</a></h4>
-                                <p class="text-muted">@Founder <span> | </span> <span> <a href="#" class="text-pink">websitename.com</a> </span></p>
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
 
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$2563</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
                                         </div>
                                     </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$29.8k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>1125</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
+                                </div> <!-- end row-->
+
+                                <a href="{{ route('admin.dashboard.merchant.detail') }}"><button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button></a>&nbsp;
+                                <a href="{{ route('admin.dashboard.tenant.detail') }}"><button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button></a>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
@@ -96,36 +92,31 @@
                         </div>
                     </div> <!-- end card-->
                 </div> <!-- end col -->
-
                 <div class="col-lg-4">
                     <div class="text-center card">
                         <div class="card-body">
                             <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-4.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
 
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Christopher Gallardo</a></h4>
-                                <p class="text-muted">@Webdesigner  <span> | </span> <span> <a href="#" class="text-pink">abcweb.com</a> </span></p>
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
 
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$12.7k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
                                         </div>
                                     </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$65.3k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>2184</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
@@ -134,36 +125,328 @@
                         </div>
                     </div> <!-- end card-->
                 </div> <!-- end col -->
-
                 <div class="col-lg-4">
                     <div class="text-center card">
                         <div class="card-body">
                             <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-5.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
 
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Joseph M. Rohr</a></h4>
-                                <p class="text-muted">@Webdesigner <span> | </span> <span> <a href="#" class="text-pink">mywebs.com</a> </span></p>
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
 
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$1021</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
                                         </div>
                                     </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$25.6k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
                                         </div>
                                     </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>325</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Toko Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                            </div> <!-- end .padding -->
+                        </div>
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+                <div class="col-lg-4">
+                    <div class="text-center card">
+                        <div class="card-body">
+                            <div class="pt-2 pb-2">
+                                <img src="{{ asset('assets/images/users/user-3.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
+
+                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">User Kopi Waru</a></h4>
+                                <p class="text-muted">Merchant Representative<span> | </span> <span> <a href="#" class="text-pink">Andy Suherman</a> </span></p>
+
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <div class="mb-3">
+                                            <h4>XFGR2</h4>
+                                        </div>
+                                    </div>
+                                </div> <!-- end row-->
+
+                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Merchant Detail</button>&nbsp;
+                                <button type="button" class="btn btn-light btn-sm waves-effect">User Detail</button>
+
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <div class="mt-2">
+                                            <h4>Rp. 1.000.000,00</h4>
+                                            <p class="mb-0 text-muted text-truncate">Total Penarikan</p>
                                         </div>
                                     </div>
                                 </div> <!-- end row-->
@@ -173,242 +456,6 @@
                     </div> <!-- end card-->
                 </div> <!-- end col -->
             </div>
-            <!-- end row -->
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-center card">
-                        <div class="card-body">
-                            <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-6.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
-
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Mark K. Horne</a></h4>
-                                <p class="text-muted">@Director  <span> | </span> <span> <a href="#" class="text-pink">profileq.com</a> </span></p>
-
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$7845</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$16.7k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>5846</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-
-                            </div> <!-- end .padding -->
-                        </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-
-                <div class="col-lg-4">
-                    <div class="text-center card">
-                        <div class="card-body">
-                            <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-7.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
-
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">James M. Fonville</a></h4>
-                                <p class="text-muted">@Manager <span> | </span> <span> <a href="#" class="text-pink">coolweb.com</a> </span></p>
-
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$4851</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$10.2k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>895</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-
-                            </div> <!-- end .padding -->
-                        </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-
-                <div class="col-lg-4">
-                    <div class="text-center card">
-                        <div class="card-body">
-                            <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-8.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
-
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Jade M. Walker</a></h4>
-                                <p class="text-muted">@Programmer <span> | </span> <span> <a href="#" class="text-pink">supported.com</a> </span></p>
-
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$4560</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$15.3k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>742</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-
-                            </div> <!-- end .padding -->
-                        </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-            </div>
-            <!-- end row -->
-
-
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="text-center card">
-                        <div class="card-body">
-                            <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-2.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
-
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Marie E. Tate</a></h4>
-                                <p class="text-muted">@Webdeveloper <span> | </span> <span> <a href="#" class="text-pink">website.com</a> </span></p>
-
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$3520</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$4587</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>423</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-
-                            </div> <!-- end .padding -->
-                        </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-
-                <div class="col-lg-4">
-                    <div class="text-center card">
-                        <div class="card-body">
-                            <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-9.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
-
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Elyse D. Davidson</a></h4>
-                                <p class="text-muted">@Webdesigner <span> | </span> <span> <a href="#" class="text-pink">dumosite.com</a> </span></p>
-
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$7851</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$16.8k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>1036</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-
-                            </div> <!-- end .padding -->
-                        </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-
-                <div class="col-lg-4">
-                    <div class="text-center card">
-                        <div class="card-body">
-                            <div class="pt-2 pb-2">
-                                <img src="{{ asset('assets/images/users/user-10.jpg') }}" class="rounded-circle img-thumbnail avatar-xl" alt="profile-image">
-
-                                <h4 class="mt-3"><a href="extras-profile.html" class="text-dark">Sarah E. Goin</a></h4>
-                                <p class="text-muted">@Manager <span> | </span> <span> <a href="#" class="text-pink">webion.com</a> </span></p>
-
-                                <button type="button" class="btn btn-primary btn-sm waves-effect waves-light">Message</button>
-                                <button type="button" class="btn btn-light btn-sm waves-effect">Follow</button>
-
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$7421</h4>
-                                            <p class="mb-0 text-muted text-truncate">Post</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>$29.5k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followers</p>
-                                        </div>
-                                    </div>
-                                    <div class="col-4">
-                                        <div class="mt-3">
-                                            <h4>11k</h4>
-                                            <p class="mb-0 text-muted text-truncate">Followings</p>
-                                        </div>
-                                    </div>
-                                </div> <!-- end row-->
-
-                            </div> <!-- end .padding -->
-                        </div>
-                    </div> <!-- end card-->
-                </div> <!-- end col -->
-            </div>
-            <!-- end row -->
 
             <div class="row">
                 <div class="col-12">

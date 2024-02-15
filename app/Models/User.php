@@ -11,6 +11,7 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use App\Models\DetailUser;
 use App\Models\InvitationCode;
+use App\Models\Merchant;
 
 class User extends Authenticatable implements JWTSubject {
     use HasApiTokens, HasFactory, Notifiable;
@@ -55,12 +56,20 @@ class User extends Authenticatable implements JWTSubject {
     }
 
     public function invitationCode(){
-        return $this->hasMany(InvitationCode::class, 'id_marketing', 'id');
+        return $this->hasMany(InvitationCode::class, 'id_marketing', 'id')->where('type', "marketing")->get();;
+    }
+
+    public function marketingTenant(){
+        return $this->hasMany(Merchant::class, 'id_marketing', 'id')->where('type', "marketing")->get();;
+    }
+
+    public function userTenant(){
+        return $this->hasOne(Merchant::class, 'id_tenant', 'id')->where('type', "tenant")->first();;
     }
 
     protected function type(): Attribute {
         return new Attribute(
-            get: fn ($value) =>  ["super_admin", "marketing"][$value],
+            get: fn ($value) =>  ["super_admin", "marketing", "tenant"][$value],
         );
     }
 

@@ -231,4 +231,12 @@ class AdminController extends Controller {
     public function adminFinanceData(){
         return view('admin.admin_finance_data');
     }
+
+    public function adminMerchantDetail(){
+        return view('admin.admin_merchant_detail');
+    }
+
+    public function adminTenantDetail(){
+        return view('admin.admin_tenant_detail');
+    }
 }
