@@ -62,18 +62,22 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    @if($usrMarketing->is_active == 1)
+                                                    @if($usrMarketing->is_active == 0)
+                                                        <strong>Belum Diaktifkan</strong>
+                                                    @elseif($usrMarketing->is_active == 1)
                                                         <strong>Aktif</strong>
-                                                    @else
-                                                        <strong>Tidak Aktif</strong>
+                                                    @elseif($usrMarketing->is_active == 2)
+                                                        <strong>Non Aktif</strong>
                                                     @endif
                                                 </td>
                                                 <td>
                                                     <a href="{{ route('admin.marketing.dashboard.list.account.activation', ['id'=>$usrMarketing->id]) }}">
-                                                        @if($usrMarketing->is_active == 1)
-                                                            <button title="Non Aktifkan" type="button" class="btn btn-warning rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
-                                                        @else
-                                                            <button title="Aktifkan" type="button" class="btn btn-success rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
+                                                        @if($usrMarketing->is_active == 0)
+                                                            <button title="Verifikasi Aktivasi" type="button" class="btn btn-success rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
+                                                        @elseif($usrMarketing->is_active == 1)
+                                                            <button title="Non Aktifkan" type="button" class="btn btn-danger rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
+                                                        @elseif($usrMarketing->is_active == 2)
+                                                            <button title="Aktifkan Kembali Akun" type="button" class="btn btn-warning rounded-circle waves-effect waves-light"><span class="mdi mdi-power"></span></button>&nbsp;
                                                         @endif
                                                     </a>
                                                     <a href="{{ route('admin.marketing.dashboard.list.detail', ['id'=>$usrMarketing->id]) }}">

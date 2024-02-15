@@ -55,6 +55,11 @@ class LoginRequest extends FormRequest {
                 'login' => trans('Akun anda belum aktif!'),
             ]);
         } else {
+            if($user->is_active == 2){
+                throw ValidationException::withMessages([
+                    'login' => trans('Akun anda telah dinonaktifkan, silahkan hubungi admin VPOS!'),
+                ]);
+            }
             Auth::login($user, $this->boolean('remember'));
             RateLimiter::clear($this->throttleKey());
         }

@@ -199,8 +199,10 @@ class AdminController extends Controller {
         $userMarketing = User::find($id);
         if($userMarketing->is_active == 0){
             $userMarketing->is_active = 1;
-        } else {
-            $userMarketing->is_active = 0;
+        } else if($userMarketing->is_active == 1) {
+            $userMarketing->is_active = 2;
+        } else if($userMarketing->is_active == 2){
+            $userMarketing->is_active = 1;
         }
         $userMarketing->save();  
         $notification = array(
