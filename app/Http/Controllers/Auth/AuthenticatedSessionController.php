@@ -29,9 +29,9 @@ class AuthenticatedSessionController extends Controller {
             'alert-type' => 'info',
         );
         if(Auth::user() && Auth::user()->type == 'super_admin'){
-            return redirect()->route('admin.dashboard');
+            return redirect()->route('admin.dashboard')->with($notification);
         } else if(Auth::user() && Auth::user()->type == 'marketing'){
-            return redirect()->route('marketing.dashboard');
+            return redirect()->route('marketing.dashboard')->with($notification);
         } else { 
             Auth::guard('web')->logout();
             return redirect()->route('login')->with('status', 'You are not authorized to access this page.');

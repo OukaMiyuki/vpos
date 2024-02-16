@@ -27,7 +27,7 @@ class LoginRequest extends FormRequest {
      */
     public function rules(): array {
         return [
-            'login' => ['required', 'string'],
+            'email' => ['required', 'email'],
             'password' => ['required', 'string'],
         ];
     }
@@ -39,9 +39,7 @@ class LoginRequest extends FormRequest {
      */
     public function authenticate(): void {
         $this->ensureIsNotRateLimited();
-        $user = User::where('email',$this->login)
-                    ->orWhere('username',$this->login)
-                    ->orWhere('phone',$this->phone)
+        $user = User::where('email',$this->email)
                     ->first();
         if (!$user || !Hash::check($this->password,$user->password)) {
             RateLimiter::hit($this->throttleKey());
@@ -50,19 +48,21 @@ class LoginRequest extends FormRequest {
                 'login' => trans('auth.failed'),
             ]);
         }
-        if($user->is_active == 0){
-            throw ValidationException::withMessages([
-                'login' => trans('Akun anda belum aktif!'),
-            ]);
-        } else {
-            if($user->is_active == 2){
-                throw ValidationException::withMessages([
-                    'login' => trans('Akun anda telah dinonaktifkan, silahkan hubungi admin VPOS!'),
-                ]);
-            }
-            Auth::login($user, $this->boolean('remember'));
-            RateLimiter::clear($this->throttleKey());
-        }
+        Auth::guard('web')->attempt(['email' => $this->email, 'password' => $this->password], $this->boolean('remember'));
+        RateLimiter::clear($this->throttleKey());
+        // if($user->is_active == 0){
+        //     throw ValidationException::withMessages([
+        //         'login' => trans('Akun anda belum aktif!'),
+        //     ]);
+        // } else {
+        //     if($user->is_active == 2){
+        //         throw ValidationException::withMessages([
+        //             'login' => trans('Akun anda telah dinonaktifkan, silahkan hubungi admin VPOS!'),
+        //         ]);
+        //     }
+        //     Auth::guard('web')->login($user, $this->boolean('remember'));
+        //     RateLimiter::clear($this->throttleKey());
+        // }
     }
 
     /**
