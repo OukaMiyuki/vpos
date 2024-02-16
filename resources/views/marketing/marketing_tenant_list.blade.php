@@ -48,22 +48,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                @php
-                                                    $no=0;
-                                                @endphp
-                                                @foreach ($userTenant as $tenant)
-                                                    <tr>
-                                                        <td>{{ $no+=1 }}</td>
-                                                        <td>{{ $tenant->detailUser->nama_lengkap }}</td></td>
-                                                        <td>andy@gmail.com</td>
-                                                        <td>087998823432</td>
-                                                        <td>20-01-2023</td>
-                                                        <td>
-                                                            <a title="Merchant Detail" href="{{ route('marketing.dashboard.merchant.detail') }}" class="btn btn-xs btn-info"><i class="mdi mdi-storefront-outline"></i></a>&nbsp;&nbsp;
-                                                            <a title="Tenant Detail" href="{{ route('marketing.dashboard.tenant.detail') }}" class="btn btn-xs btn-success"><i class="mdi mdi-account"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Andy Suherman</td>
+                                                    <td>andy@gmail.com</td>
+                                                    <td>087998823432</td>
+                                                    <td>20-01-2023</td>
+                                                    <td>
+                                                        <a title="Merchant Detail" href="{{ route('marketing.dashboard.merchant.detail') }}" class="btn btn-xs btn-info"><i class="mdi mdi-storefront-outline"></i></a>&nbsp;&nbsp;
+                                                        <a title="Tenant Detail" href="{{ route('marketing.dashboard.tenant.detail') }}" class="btn btn-xs btn-success"><i class="mdi mdi-account"></i></a>
+                                                    </td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>

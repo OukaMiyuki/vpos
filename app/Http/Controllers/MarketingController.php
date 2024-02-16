@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\DetailUser;
 use App\Models\InvitationCode;
-use App\Models\Merchant;
 
 class MarketingController extends Controller {
 
@@ -153,14 +152,7 @@ class MarketingController extends Controller {
     }
 
     public function marketingTeantListAll(){
-        // $userTenant = User::with(['userMerchant' => function($query){
-        //     $query->where('id_marketing', auth()->user()->id);
-        // }])->orderBy('id', 'DESC')->get();
-        // $user = User::with('userMerchant')->whereHas('id_marketing', function ($q) {
-        //         $q->where('expiration', 'like', 'somethingToSearchFor');
-        //     })->get();
-        $userTenant = User::with('userMerchant')->get();
-        return view('marketing.marketing_tenant_list', compact('userTenant'));
+        return view('marketing.marketing_tenant_list');
     }
 
     public function marketingMerchantDetail() {

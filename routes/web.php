@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MarketingController;
-use App\Http\Controllers\Auth\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,7 +76,5 @@ Route::middleware(['auth', 'user-access:marketing'])->group(function () {
 });
 
 Route::get('/logout', [AdminController::class, 'adminLogoutPage'])->name('admin.logout.page');
-Route::get('/tenant/register', [RegisteredUserController::class, 'tenantRegister'])->name('tenant.register.page');
-Route::post('/tenant/register', [RegisteredUserController::class, 'tenantStore'])->name('tenant.register.store');
 
 require __DIR__.'/auth.php';
